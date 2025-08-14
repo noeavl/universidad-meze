@@ -1,0 +1,10 @@
+@import "tailwindcss";
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+
+@theme {
+  --federal-blue: #040053ff;
+  --ghost-white: #f7f5faff;
+  --vivid-sky-blue: #01dafdff;
+  --navy-blue: #16077dff;
+  --powder-blue: #adc1e2ff;
+}

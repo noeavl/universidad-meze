@@ -1,0 +1,164 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../images/logo.webp';
+---
+
+<div class="w-full h-screen">
+  <div class="bg-black p-5"></div>
+
+  <nav
+    class="flex items-center justify-between bg-[var(--federal-blue)] py-5 px-50"
+  >
+    <div class="flex items-center gap-5">
+      <div>
+        <Image src={logo} alt={'Logo'} width={120} />
+      </div>
+      <ul class="text-white flex gap-5">
+        <li class="nav-item cursor-pointer">Inicio</li>
+        <li class="nav-item cursor-pointer">Preparatoria</li>
+        <li class="nav-item cursor-pointer">Nivel Medio</li>
+        <li class="nav-item cursor-pointer">Nivel Superior</li>
+        <li class="nav-item cursor-pointer">Maestrías</li>
+      </ul>
+    </div>
+    <div
+      class="bg-black rounded-full text-white px-4 py-3 shadow-lg hover:shadow-2xl transition-all duration-300"
+    >
+      Contacto
+    </div>
+  </nav>
+
+  <div
+    id="submenu"
+    class="min-h-0 h-0 bg-[var(--federal-blue)] overflow-hidden transition-all duration-300"
+  >
+  </div>
+</div>
+
+<script>
+  class NavigationMenu {
+    private items: NodeListOf<Element>;
+    private submenu: HTMLElement;
+    private nav: HTMLElement;
+    private submenuContent: Record<string, string>;
+
+    constructor() {
+      this.items = document.querySelectorAll('.nav-item');
+      this.submenu = document.getElementById('submenu') as HTMLElement;
+      this.nav = document.querySelector('nav') as HTMLElement;
+
+      this.submenuContent = {
+        Inicio: '',
+        Preparatoria: this.getPreparatoriaContent(),
+        'Nivel Medio': this.getNivelMedioContent(),
+        'Nivel Superior': this.getNivelSuperiorContent(),
+        Maestrías: this.getMaestriasContent(),
+      };
+
+      this.init();
+    }
+
+    private getPreparatoriaContent(): string {
+      return `
+        <div class="p-5">
+          <ul class="flex flex-col gap-2 text-white">
+            <li>Preparatoria de 2 años</li>
+            <li>Preparatoria de 3 años</li>
+            <li>Asistente Educativo</li>
+            <li>Asistente Jurídico Administrativo</li>
+            <li>Diseño Gráfico</li>
+            <li>Gastronomía</li>
+            <li>Tecnologías de la Información</li>
+          </ul>
+        </div>
+      `;
+    }
+
+    private getNivelMedioContent(): string {
+      return `
+        <div class="p-5">
+          <ul class="flex flex-col gap-2 text-white">
+            <li>Enfermería General</li>
+          </ul>
+        </div>
+      `;
+    }
+
+    private getNivelSuperiorContent(): string {
+      return `
+        <div class="p-5">
+          <ul class="flex flex-col gap-2 text-white">
+            <li>Lic. Contaduría</li>
+            <li>Lic. Enfermería</li>
+            <li>Lic. Idiomas y Relaciones Internacionales</li>
+            <li>Lic. Mercadotecnia y Publicidad</li>
+            <li>Lic. Nutrición</li>
+            <li>Lic. Psicología</li>
+            <li>Lic. Seguridad e Higiene Industrial</li>
+            <li>Ing. Energías Renovables</li>
+            <li>Ing. Tecnologías de la Información y Negocios</li>
+          </ul>
+        </div>
+      `;
+    }
+
+    private getMaestriasContent(): string {
+      return `
+        <div class="p-5">
+          <ul class="flex flex-col gap-2 text-white">
+            <li>Administración y Gestión Ambiental</li>
+            <li>Ciencias de la Psicología Educativa</li>
+            <li>Investigación y Ética</li>
+            <li>Maestría en Nutrición Aplicada</li>
+            <li>Psicología Forense</li>
+          </ul>
+        </div>
+      `;
+    }
+
+    private showSubmenu(content: string): void {
+      this.submenu.innerHTML = content;
+      this.submenu.style.height = '50%';
+    }
+
+    private hideSubmenu(): void {
+      this.submenu.style.height = '0';
+    }
+
+    private handleMouseEnter = (item: Element): void => {
+      const key = item.textContent?.trim() || '';
+      const content = this.submenuContent[key] || '';
+      this.showSubmenu(content);
+    };
+
+    private handleMouseLeave = (event: MouseEvent): void => {
+      const related = event.relatedTarget as Node | null;
+
+      if (
+        !related ||
+        (!this.nav.contains(related) && !this.submenu.contains(related))
+      ) {
+        this.hideSubmenu();
+      }
+    };
+
+    private bindEvents(): void {
+      this.items.forEach((item) => {
+        item.addEventListener('mouseenter', () => this.handleMouseEnter(item));
+      });
+
+      this.nav.addEventListener('mouseleave', this.handleMouseLeave);
+      this.submenu.addEventListener('mouseleave', this.handleMouseLeave);
+    }
+
+    private init(): void {
+      if (this.submenu && this.nav) {
+        this.bindEvents();
+      }
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    new NavigationMenu();
+  });
+</script>
