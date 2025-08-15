@@ -1,0 +1,119 @@
+---
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/effect-coverflow";
+import { Image } from "astro:assets";
+
+// Importar todas las imágenes
+import contaduriaPublica from "../images/contaduria-publica.webp";
+import enfermeria from "../images/enfermeria.webp";
+import idiomasRelaciones from "../images/idiomas-y-relaciones-internacionales.webp";
+import mercadotecnia from "../images/mercadotecnia-y-publicidad.webp";
+import nutricion from "../images/nutricion.webp";
+import psicologia from "../images/psicologia.webp";
+import seguridadHigiene from "../images/seguridad-e-higiene-industrial.webp";
+import energiasRenovables from "../images/energias-renovables.webp";
+import tecnologias from "../images/tecnologias-de-la-informacion.webp";
+
+const degrees = [
+    { name: "Contaduría", type: "Licenciatura", img: contaduriaPublica },
+    { name: "Enfermería", type: "Licenciatura", img: enfermeria },
+    {
+        name: "Idiomas y Relaciones Internacionales",
+        type: "Licenciatura",
+        img: idiomasRelaciones,
+    },
+    {
+        name: "Mercadotecnia y Publicidad",
+        type: "Licenciatura",
+        img: mercadotecnia,
+    },
+    { name: "Nutrición", type: "Licenciatura", img: nutricion },
+    { name: "Psicología", type: "Licenciatura", img: psicologia },
+    {
+        name: "Seguridad e Higiene Industrial",
+        type: "Licenciatura",
+        img: seguridadHigiene,
+    },
+    {
+        name: "Energías Renovables",
+        type: "Ingeniería",
+        img: energiasRenovables,
+    },
+    {
+        name: "Tecnologías de la Información y Negocios",
+        type: "Ingeniería",
+        img: tecnologias,
+    },
+];
+---
+
+<div class="p-8">
+    <div id="degrees-swiper" class="swiper max-w-6xl mx-auto">
+        <div class="swiper-wrapper">
+            {
+                degrees.map((degree) => (
+                    <div class="swiper-slide !w-80">
+                        <div class="bg-white p-6 text-center h-96 flex flex-col justify-center rounded-xl shadow-lg">
+                            <div class="mb-6">
+                                <Image
+                                    src={degree.img}
+                                    alt={degree.name}
+                                    class="w-48 h-48 object-cover mx-auto rounded-lg"
+                                />
+                            </div>
+                            <div class="space-y-2">
+                                <p class="text-sm text-blue-600 font-medium">
+                                    {degree.type}
+                                </p>
+                                <h3 class="text-xl font-medium text-gray-800">
+                                    {degree.name}
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+
+        <!-- Navigation -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        <!-- Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
+
+<script>
+    import { Swiper } from "swiper";
+    import { Navigation, Pagination, EffectCoverflow } from "swiper/modules";
+
+    document.addEventListener("DOMContentLoaded", () => {
+        new Swiper("#degrees-swiper", {
+            modules: [Navigation, Pagination, EffectCoverflow],
+            effect: "coverflow",
+            loop: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            autoplay: true,
+            spaceBetween: 15,
+            coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    });
+</script>
