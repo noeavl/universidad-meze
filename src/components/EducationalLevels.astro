@@ -1,0 +1,151 @@
+---
+
+const nivelesEducativos = [
+  {
+    id: 'maestrias',
+    titulo: 'Maestrías',
+    descripcion: 'Postgrados especializados',
+    icono: 'graduation-cap',
+    enlace: '/maestrias'
+  },
+  {
+    id: 'centro-idiomas',
+    titulo: 'Centro de Idiomas',
+    descripcion: 'Certificaciones internacionales',
+    icono: 'language',
+    enlace: '/centro-idiomas'
+  },
+  {
+    id: 'preparatoria',
+    titulo: 'Preparatoria',
+    descripcion: 'De 2 y 3 años',
+    icono: 'school',
+    enlace: '/preparatoria'
+  },
+  {
+    id: 'nivel-medio',
+    titulo: 'Nivel Medio',
+    descripcion: 'Enfermería General',
+    icono: 'book-open',
+    enlace: '/nivel-medio'
+  },
+  {
+    id: 'nivel-superior',
+    titulo: 'Nivel Superior',
+    descripcion: 'Licenciaturas e Ingenierías',
+    icono: 'academic-cap',
+    enlace: '/nivel-superior'
+  }
+];
+---
+
+<section class="py-16 lg:py-24 bg-[var(--alice-blue)]">
+  <div class="max-w-6xl mx-auto px-6 lg:px-8">
+    
+    <!-- Título -->
+    <div class="text-center mb-16">
+      <h2 class="text-3xl lg:text-4xl font-light text-[var(--federal-blue)] mb-8 tracking-wide">
+        Niveles Educativos
+      </h2>
+      <div class="w-12 h-px bg-[var(--federal-blue)] mx-auto mb-6"></div>
+      <p class="text-lg text-gray-600 font-light max-w-2xl mx-auto">
+        Descubre la amplia oferta educativa que MEZE tiene para ti, desde preparatoria hasta maestrías
+      </p>
+    </div>
+
+    <!-- Grid de niveles educativos -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 lg:gap-8">
+      {nivelesEducativos.map((nivel) => (
+        <a 
+          href={nivel.enlace}
+          class="group block"
+        >
+          <div class="bg-white rounded-sm border border-gray-200 p-6 lg:p-8 text-center transition-all duration-300 group-hover:shadow-md group-hover:-translate-y-1 h-full">
+            
+            <!-- Icono -->
+            <div class="mb-6">
+              <div class="w-16 h-16 mx-auto bg-[var(--ghost-white)] rounded-full flex items-center justify-center group-hover:bg-[var(--powder-blue)] transition-colors duration-300">
+                {nivel.icono === 'graduation-cap' && (
+                  <svg class="w-8 h-8 text-[var(--federal-blue)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l9-5-9-5-9 5 9 5z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
+                  </svg>
+                )}
+                
+                {nivel.icono === 'language' && (
+                  <svg class="w-8 h-8 text-[var(--federal-blue)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path>
+                  </svg>
+                )}
+                
+                {nivel.icono === 'school' && (
+                  <svg class="w-8 h-8 text-[var(--federal-blue)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                  </svg>
+                )}
+                
+                {nivel.icono === 'book-open' && (
+                  <svg class="w-8 h-8 text-[var(--federal-blue)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                  </svg>
+                )}
+                
+                {nivel.icono === 'academic-cap' && (
+                  <svg class="w-8 h-8 text-[var(--federal-blue)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l9-5-9-5-9 5 9 5z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l9-5-9-5-9 5 9 5zm0 0v7"></path>
+                  </svg>
+                )}
+              </div>
+            </div>
+
+            <!-- Contenido -->
+            <div class="space-y-3">
+              <h3 class="text-lg font-medium text-[var(--federal-blue)] tracking-wide">
+                {nivel.titulo}
+              </h3>
+              <p class="text-sm text-gray-600 font-light leading-relaxed">
+                {nivel.descripcion}
+              </p>
+            </div>
+
+            <!-- Indicador de enlace -->
+            <div class="mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div class="flex items-center justify-center space-x-2 text-[var(--federal-blue)]">
+                <span class="text-sm font-light">Conocer más</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </div>
+            </div>
+
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <!-- Información adicional -->
+    <div class="mt-16 text-center">
+      <div class="max-w-2xl mx-auto space-y-6">
+        <div class="w-12 h-px bg-gray-300 mx-auto"></div>
+        <p class="text-[var(--federal-blue)] font-medium">
+          ¿No encuentras lo que buscas?
+        </p>
+        <p class="text-sm text-gray-600 font-light">
+          Contáctanos para conocer más sobre nuestros programas educativos y opciones de estudio
+        </p>
+        <a 
+          href="/contacto"
+          class="inline-flex items-center space-x-2 text-[var(--federal-blue)] font-medium hover:text-[var(--navy-blue)] transition-colors duration-200"
+        >
+          <span>Contactar</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>

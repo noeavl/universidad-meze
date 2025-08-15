@@ -101,7 +101,7 @@ const revistas = [
       </div>
 
       <!-- Revistas -->
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-2xl mx-auto">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto">
         {revistas.map((revista) => (
           <a 
             href={revista.pdfUrl}
@@ -111,7 +111,7 @@ const revistas = [
           >
             <div class="bg-white border border-gray-200 rounded-sm shadow-sm transition-all duration-300 group-hover:shadow-md group-hover:-translate-y-1">
               <!-- Imagen de la revista -->
-              <div class="aspect-[3/4] p-2">
+              <div class="aspect-[3/4] p-3">
                 <Image
                   src={revista.imagen}
                   alt={revista.alt}
@@ -120,11 +120,11 @@ const revistas = [
               </div>
               
               <!-- Información de la revista -->
-              <div class="p-3 border-t border-gray-100">
-                <div class="text-xs text-[var(--federal-blue)] font-medium mb-1">
+              <div class="p-4 border-t border-gray-100">
+                <div class="text-sm text-[var(--federal-blue)] font-medium mb-1">
                   {revista.mes}
                 </div>
-                <div class="text-[10px] text-gray-500">
+                <div class="text-xs text-gray-500">
                   {revista.año}
                 </div>
               </div>

@@ -10,9 +10,9 @@ import logo from "../images/logo_azul.webp";
   >
     <!-- Logo -->
     <div class="flex items-center">
-      <div>
-        <Image src={logo} alt={"Logo"} width={100} class="lg:w-[120px]" />
-      </div>
+      <a href="/">
+        <Image src={logo} alt={"Logo"} width={100} />
+      </a>
     </div>
 
     <!-- Menu desktop -->
@@ -22,7 +22,7 @@ import logo from "../images/logo_azul.webp";
       <li
         class="nav-item cursor-pointer transition-colors duration-200 hover:text-[var(--navy-blue)]"
       >
-        <span class="font-light tracking-wide">Inicio</span>
+        <a href="/" class="font-light tracking-wide">Inicio</a>
       </li>
       <li
         class="nav-item cursor-pointer flex items-center space-x-1 transition-colors duration-200 hover:text-[var(--navy-blue)]"
@@ -234,14 +234,13 @@ import logo from "../images/logo_azul.webp";
                 >Gastronomía</a
               >
               <a
-                href="#"
+                href="/nivel-superior/ingenierias/tecnologias-de-la-informacion-y-negocios"
                 class="block px-6 py-2 text-sm text-gray-600 hover:text-[var(--federal-blue)] font-light transition-colors duration-200"
-                >Tecnologías de la Información</a
+                >Tecnologías de la Información y Negocios</a
               >
             </div>
           </li>
 
-          <!-- Resto de elementos del menú con la misma estructura... -->
           <li>
             <button
               class="mobile-dropdown-btn w-full flex items-center justify-between px-6 py-3 text-[var(--federal-blue)] hover:text-[var(--navy-blue)] font-light tracking-wide transition-colors duration-200"
@@ -517,29 +516,32 @@ import logo from "../images/logo_azul.webp";
 
     private getPreparatoriaContent(): string {
       return `
-        <div class="py-6 px-8">
-          <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div class="space-y-2">
-                <div class="text-sm text-gray-500 font-light">Preparatoria</div>
-                <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Preparatoria de 2 años</a>
-                <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Preparatoria de 3 años</a>
-              </div>
-              <div class="space-y-2">
-                <div class="text-sm text-gray-500 font-light">Carreras Técnicas</div>
-                <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Asistente Educativo</a>
-                <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Asistente Jurídico Administrativo</a>
-                <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Diseño Gráfico</a>
-              </div>
-              <div class="space-y-2">
-                <div class="text-sm text-gray-500 font-light">Especialidades</div>
-                <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Gastronomía</a>
-                <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Tecnologías de la Información</a>
-              </div>
-            </div>
+    <div class="py-6 px-8">
+      <div class="max-w-4xl mx-auto">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <!-- Preparatoria de 2 años -->
+          <div class="space-y-2">
+            <div class="text-sm text-gray-500 font-light">Preparatoria</div>
+            <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">
+              Preparatoria de 2 años
+            </a>
           </div>
+          
+          <!-- Preparatoria de 3 años -->
+          <div class="space-y-2">
+            <div class="text-sm text-gray-500 font-light">Preparatoria de 3 años</div>
+            <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Asistente Educativo</a>
+            <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Asistente Jurídico Administrativo</a>
+            <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Diseño Gráfico</a>
+            <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Gastronomía</a>
+            <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Tecnologías de la Información</a>
+          </div>
+
         </div>
-      `;
+      </div>
+    </div>
+  `;
     }
 
     private getNivelMedioContent(): string {
@@ -557,53 +559,62 @@ import logo from "../images/logo_azul.webp";
 
     private getNivelSuperiorContent(): string {
       return `
-        <div class="py-6 px-8">
-          <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div class="space-y-2">
-                <div class="text-sm text-gray-500 font-light">Ciencias de la Salud</div>
-                <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Lic. Enfermería</a>
-                <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Lic. Nutrición</a>
-                <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Lic. Psicología</a>
-              </div>
-              <div class="space-y-2">
-                <div class="text-sm text-gray-500 font-light">Ciencias Económico Administrativas</div>
-                <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Lic. Contaduría</a>
-                <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Lic. Mercadotecnia y Publicidad</a>
-              </div>
-              <div class="space-y-2">
-                <div class="text-sm text-gray-500 font-light">Ingenierías y Humanidades</div>
-                <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Ing. Energías Renovables</a>
-                <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Ing. Tecnologías de la Información</a>
-                <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Lic. Idiomas y Relaciones Internacionales</a>
-                <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Lic. Seguridad e Higiene Industrial</a>
-              </div>
-            </div>
+    <div class="py-6 px-8">
+      <div class="max-w-4xl mx-auto">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- Ciencias de la Salud -->
+          <div class="space-y-2">
+            <div class="text-sm text-gray-500 font-light">Ciencias de la Salud</div>
+            <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Lic. Enfermería</a>
+            <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Lic. Nutrición</a>
+            <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Lic. Psicología</a>
           </div>
+
+          <!-- Ciencias Económico Administrativas -->
+          <div class="space-y-2">
+            <div class="text-sm text-gray-500 font-light">Ciencias Económico Administrativas</div>
+            <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Lic. Contaduría</a>
+            <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Lic. Mercadotecnia y Publicidad</a>
+          </div>
+
+          <!-- Humanidades -->
+          <div class="space-y-2">
+            <div class="text-sm text-gray-500 font-light">Humanidades</div>
+            <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Lic. Idiomas y Relaciones Internacionales</a>
+            <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Lic. Seguridad e Higiene Industrial</a>
+          </div>
+
+          <!-- Ingenierías -->
+          <div class="space-y-2">
+            <div class="text-sm text-gray-500 font-light">Ingenierías</div>
+            <a href="/nivel-superior/ingenierias/energias-renovables" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Ing. Energías Renovables</a>
+            <a href="/nivel-superior/ingenierias/tecnologias-de-la-informacion-y-negocios" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Ing. Tecnologías de la Información y Negocios</a>
+          </div>
+
         </div>
-      `;
+      </div>
+    </div>
+  `;
     }
 
     private getMaestriasContent(): string {
       return `
-        <div class="py-6 px-8">
-          <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-6">
-              <div class="space-y-2">
-                <div class="text-sm text-gray-500 font-light">Postgrados</div>
-                <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Administración y Gestión Ambiental</a>
-                <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Ciencias de la Psicología Educativa</a>
-                <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Investigación y Ética</a>
-              </div>
-              <div class="space-y-2">
-                <div class="text-sm text-gray-500 font-light">Especialidades</div>
-                <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Maestría en Nutrición Aplicada</a>
-                <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Psicología Forense</a>
-              </div>
-            </div>
+    <div class="py-6 px-8">
+      <div class="max-w-4xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="space-y-2">
+            <div class="text-sm text-gray-500 font-light">Maestrías</div>
+            <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Administración y Gestión Ambiental</a>
+            <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Ciencias de la Psicología Educativa</a>
+            <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Investigación y Ética</a>
+            <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Maestría en Nutrición Aplicada</a>
+            <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Psicología Forense</a>
           </div>
         </div>
-      `;
+      </div>
+    </div>
+  `;
     }
 
     // Desktop methods
