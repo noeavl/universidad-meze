@@ -3,70 +3,432 @@ import { Image } from "astro:assets";
 import logo from "../images/logo_azul.webp";
 ---
 
-<div class="w-full h-screen">
-  <div class="bg-black p-5"></div>
-
+<header class="w-full">
   <nav
     id="main-nav"
-    class="h-[12%] flex items-center justify-between bg-[var(--ghost-white)] py-5 px-50 transition-all duration-300"
+    class="flex items-center justify-between bg-[var(--ghost-white)] py-4 lg:py-6 px-6 lg:px-12 xl:px-16 transition-all duration-300"
   >
-    <div class="flex items-center gap-5">
+    <!-- Logo -->
+    <div class="flex items-center">
       <div>
-        <Image src={logo} alt={"Logo"} width={120} />
+        <Image src={logo} alt={"Logo"} width={100} class="lg:w-[120px]" />
       </div>
-      <ul class="flex gap-5 text-[var(--federal-blue)]">
-        <li
-          class="nav-item cursor-pointer flex items-center gap-1 px-2 py-1 transition-colors duration-200 hover:text-[var(--navy-blue)]"
-        >
-          <span>Inicio</span>
-        </li>
-        <li
-          class="nav-item cursor-pointer flex items-center gap-1 px-2 py-1 transition-colors duration-200 hover:text-[var(--navy-blue)]"
-        >
-          <span>Preparatoria</span>
-          <i
-            class="fas fa-chevron-down text-xs transition-transform duration-200 chevron"
-          ></i>
-        </li>
-        <li
-          class="nav-item cursor-pointer flex items-center gap-1 px-2 py-1 transition-colors duration-200 hover:text-[var(--navy-blue)]"
-        >
-          <span>Nivel Medio</span>
-          <i
-            class="fas fa-chevron-down text-xs transition-transform duration-200 chevron"
-          ></i>
-        </li>
-        <li
-          class="nav-item cursor-pointer flex items-center gap-1 px-2 py-1 transition-colors duration-200 hover:text-[var(--navy-blue)]"
-        >
-          <span>Nivel Superior</span>
-          <i
-            class="fas fa-chevron-down text-xs transition-transform duration-200 chevron"
-          ></i>
-        </li>
-        <li
-          class="nav-item cursor-pointer flex items-center gap-1 px-2 py-1 transition-colors duration-200 hover:text-[var(--navy-blue)]"
-        >
-          <span>Maestrías</span>
-          <i
-            class="fas fa-chevron-down text-xs transition-transform duration-200 chevron"
-          ></i>
-        </li>
-      </ul>
     </div>
-    <div
-      class="bg-[var(--federal-blue)] rounded-full text-white px-4 py-3 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
+
+    <!-- Menu desktop -->
+    <ul
+      class="hidden lg:flex items-center space-x-8 text-[var(--federal-blue)]"
     >
-      Contacto
+      <li
+        class="nav-item cursor-pointer transition-colors duration-200 hover:text-[var(--navy-blue)]"
+      >
+        <span class="font-light tracking-wide">Inicio</span>
+      </li>
+      <li
+        class="nav-item cursor-pointer flex items-center space-x-1 transition-colors duration-200 hover:text-[var(--navy-blue)]"
+      >
+        <span class="font-light tracking-wide">Preparatoria</span>
+        <svg
+          class="w-3 h-3 transition-transform duration-200 chevron"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </li>
+      <li
+        class="nav-item cursor-pointer flex items-center space-x-1 transition-colors duration-200 hover:text-[var(--navy-blue)]"
+      >
+        <span class="font-light tracking-wide">Nivel Medio</span>
+        <svg
+          class="w-3 h-3 transition-transform duration-200 chevron"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </li>
+      <li
+        class="nav-item cursor-pointer flex items-center space-x-1 transition-colors duration-200 hover:text-[var(--navy-blue)]"
+      >
+        <span class="font-light tracking-wide">Nivel Superior</span>
+        <svg
+          class="w-3 h-3 transition-transform duration-200 chevron"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </li>
+      <li
+        class="nav-item cursor-pointer flex items-center space-x-1 transition-colors duration-200 hover:text-[var(--navy-blue)]"
+      >
+        <span class="font-light tracking-wide">Maestrías</span>
+        <svg
+          class="w-3 h-3 transition-transform duration-200 chevron"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </li>
+    </ul>
+
+    <!-- Botón contacto desktop -->
+    <div class="hidden lg:block">
+      <button
+        class="text-[var(--federal-blue)] font-light tracking-wide hover:text-[var(--navy-blue)] transition-colors duration-200 flex items-center space-x-2"
+      >
+        <span>Contacto</span>
+        <svg
+          class="w-4 h-4"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+          ></path>
+        </svg>
+      </button>
     </div>
+
+    <!-- Botón hamburguesa para móvil -->
+    <button
+      id="mobile-menu-btn"
+      class="lg:hidden flex items-center justify-center w-10 h-10 text-[var(--federal-blue)] hover:text-[var(--navy-blue)] transition-colors duration-300 focus:outline-none"
+      aria-label="Menú"
+    >
+      <svg
+        class="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
   </nav>
 
+  <!-- Offcanvas móvil -->
   <div
-    id="submenu"
-    class="min-h-0 h-0 bg-[var(--ghost-white)] overflow-hidden transition-all duration-300 shadow-lg relative z-40"
+    id="mobile-offcanvas"
+    class="fixed inset-y-0 right-0 z-50 w-80 bg-[var(--ghost-white)] shadow-2xl transform translate-x-full transition-transform duration-300 lg:hidden"
+  >
+    <!-- Header del offcanvas -->
+    <div class="flex items-center justify-between p-6 border-b border-gray-200">
+      <span class="text-lg font-light text-[var(--federal-blue)] tracking-wide"
+        >Menú</span
+      >
+      <button
+        id="close-offcanvas"
+        class="w-8 h-8 flex items-center justify-center text-[var(--federal-blue)] hover:text-[var(--navy-blue)] transition-colors duration-200"
+        aria-label="Cerrar menú"
+      >
+        <svg
+          class="w-5 h-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Contenido del offcanvas -->
+    <div class="flex flex-col h-full">
+      <!-- Menu items -->
+      <div class="flex-1 py-6">
+        <ul class="space-y-1">
+          <li>
+            <a
+              href="/"
+              class="block px-6 py-3 text-[var(--federal-blue)] hover:text-[var(--navy-blue)] font-light tracking-wide transition-colors duration-200"
+            >
+              Inicio
+            </a>
+          </li>
+
+          <!-- Preparatoria con submenu -->
+          <li>
+            <button
+              class="mobile-dropdown-btn w-full flex items-center justify-between px-6 py-3 text-[var(--federal-blue)] hover:text-[var(--navy-blue)] font-light tracking-wide transition-colors duration-200"
+            >
+              <span>Preparatoria</span>
+              <svg
+                class="w-4 h-4 mobile-chevron transition-transform duration-200"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div
+              class="mobile-submenu hidden bg-[var(--alice-blue)] border-l border-gray-200 ml-6"
+            >
+              <a
+                href="#"
+                class="block px-6 py-2 text-sm text-gray-600 hover:text-[var(--federal-blue)] font-light transition-colors duration-200"
+                >Preparatoria de 2 años</a
+              >
+              <a
+                href="#"
+                class="block px-6 py-2 text-sm text-gray-600 hover:text-[var(--federal-blue)] font-light transition-colors duration-200"
+                >Preparatoria de 3 años</a
+              >
+              <a
+                href="#"
+                class="block px-6 py-2 text-sm text-gray-600 hover:text-[var(--federal-blue)] font-light transition-colors duration-200"
+                >Asistente Educativo</a
+              >
+              <a
+                href="#"
+                class="block px-6 py-2 text-sm text-gray-600 hover:text-[var(--federal-blue)] font-light transition-colors duration-200"
+                >Asistente Jurídico Administrativo</a
+              >
+              <a
+                href="#"
+                class="block px-6 py-2 text-sm text-gray-600 hover:text-[var(--federal-blue)] font-light transition-colors duration-200"
+                >Diseño Gráfico</a
+              >
+              <a
+                href="#"
+                class="block px-6 py-2 text-sm text-gray-600 hover:text-[var(--federal-blue)] font-light transition-colors duration-200"
+                >Gastronomía</a
+              >
+              <a
+                href="#"
+                class="block px-6 py-2 text-sm text-gray-600 hover:text-[var(--federal-blue)] font-light transition-colors duration-200"
+                >Tecnologías de la Información</a
+              >
+            </div>
+          </li>
+
+          <!-- Resto de elementos del menú con la misma estructura... -->
+          <li>
+            <button
+              class="mobile-dropdown-btn w-full flex items-center justify-between px-6 py-3 text-[var(--federal-blue)] hover:text-[var(--navy-blue)] font-light tracking-wide transition-colors duration-200"
+            >
+              <span>Nivel Medio</span>
+              <svg
+                class="w-4 h-4 mobile-chevron transition-transform duration-200"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div
+              class="mobile-submenu hidden bg-[var(--alice-blue)] border-l border-gray-200 ml-6"
+            >
+              <a
+                href="#"
+                class="block px-6 py-2 text-sm text-gray-600 hover:text-[var(--federal-blue)] font-light transition-colors duration-200"
+                >Enfermería General</a
+              >
+            </div>
+          </li>
+
+          <li>
+            <button
+              class="mobile-dropdown-btn w-full flex items-center justify-between px-6 py-3 text-[var(--federal-blue)] hover:text-[var(--navy-blue)] font-light tracking-wide transition-colors duration-200"
+            >
+              <span>Nivel Superior</span>
+              <svg
+                class="w-4 h-4 mobile-chevron transition-transform duration-200"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div
+              class="mobile-submenu hidden bg-[var(--alice-blue)] border-l border-gray-200 ml-6"
+            >
+              <a
+                href="#"
+                class="block px-6 py-2 text-sm text-gray-600 hover:text-[var(--federal-blue)] font-light transition-colors duration-200"
+                >Lic. Contaduría</a
+              >
+              <a
+                href="#"
+                class="block px-6 py-2 text-sm text-gray-600 hover:text-[var(--federal-blue)] font-light transition-colors duration-200"
+                >Lic. Enfermería</a
+              >
+              <a
+                href="#"
+                class="block px-6 py-2 text-sm text-gray-600 hover:text-[var(--federal-blue)] font-light transition-colors duration-200"
+                >Lic. Idiomas y Relaciones Internacionales</a
+              >
+              <a
+                href="#"
+                class="block px-6 py-2 text-sm text-gray-600 hover:text-[var(--federal-blue)] font-light transition-colors duration-200"
+                >Lic. Mercadotecnia y Publicidad</a
+              >
+              <a
+                href="#"
+                class="block px-6 py-2 text-sm text-gray-600 hover:text-[var(--federal-blue)] font-light transition-colors duration-200"
+                >Lic. Nutrición</a
+              >
+              <a
+                href="#"
+                class="block px-6 py-2 text-sm text-gray-600 hover:text-[var(--federal-blue)] font-light transition-colors duration-200"
+                >Lic. Psicología</a
+              >
+              <a
+                href="#"
+                class="block px-6 py-2 text-sm text-gray-600 hover:text-[var(--federal-blue)] font-light transition-colors duration-200"
+                >Lic. Seguridad e Higiene Industrial</a
+              >
+              <a
+                href="#"
+                class="block px-6 py-2 text-sm text-gray-600 hover:text-[var(--federal-blue)] font-light transition-colors duration-200"
+                >Ing. Energías Renovables</a
+              >
+              <a
+                href="#"
+                class="block px-6 py-2 text-sm text-gray-600 hover:text-[var(--federal-blue)] font-light transition-colors duration-200"
+                >Ing. Tecnologías de la Información y Negocios</a
+              >
+            </div>
+          </li>
+
+          <li>
+            <button
+              class="mobile-dropdown-btn w-full flex items-center justify-between px-6 py-3 text-[var(--federal-blue)] hover:text-[var(--navy-blue)] font-light tracking-wide transition-colors duration-200"
+            >
+              <span>Maestrías</span>
+              <svg
+                class="w-4 h-4 mobile-chevron transition-transform duration-200"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div
+              class="mobile-submenu hidden bg-[var(--alice-blue)] border-l border-gray-200 ml-6"
+            >
+              <a
+                href="#"
+                class="block px-6 py-2 text-sm text-gray-600 hover:text-[var(--federal-blue)] font-light transition-colors duration-200"
+                >Administración y Gestión Ambiental</a
+              >
+              <a
+                href="#"
+                class="block px-6 py-2 text-sm text-gray-600 hover:text-[var(--federal-blue)] font-light transition-colors duration-200"
+                >Ciencias de la Psicología Educativa</a
+              >
+              <a
+                href="#"
+                class="block px-6 py-2 text-sm text-gray-600 hover:text-[var(--federal-blue)] font-light transition-colors duration-200"
+                >Investigación y Ética</a
+              >
+              <a
+                href="#"
+                class="block px-6 py-2 text-sm text-gray-600 hover:text-[var(--federal-blue)] font-light transition-colors duration-200"
+                >Maestría en Nutrición Aplicada</a
+              >
+              <a
+                href="#"
+                class="block px-6 py-2 text-sm text-gray-600 hover:text-[var(--federal-blue)] font-light transition-colors duration-200"
+                >Psicología Forense</a
+              >
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Botón contacto móvil -->
+      <div class="p-6 border-t border-gray-200">
+        <button
+          class="w-full text-[var(--federal-blue)] font-light tracking-wide hover:text-[var(--navy-blue)] transition-colors duration-200 flex items-center justify-center space-x-2 py-3"
+        >
+          <span>Contacto</span>
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Overlay -->
+  <div
+    id="mobile-overlay"
+    class="fixed inset-0 bg-black bg-opacity-20 z-40 hidden lg:hidden"
   >
   </div>
-</div>
+
+  <!-- Submenu desktop -->
+  <div
+    id="submenu"
+    class="min-h-0 h-0 bg-[var(--ghost-white)] overflow-hidden transition-all duration-300 border-t border-gray-100 relative z-40 hidden lg:block"
+  >
+  </div>
+</header>
 
 <style>
   /* Línea sutil de hover */
@@ -77,7 +439,7 @@ import logo from "../images/logo_azul.webp";
   .nav-item::after {
     content: "";
     position: absolute;
-    bottom: -1px;
+    bottom: -2px;
     left: 0;
     width: 0;
     height: 1px;
@@ -89,46 +451,58 @@ import logo from "../images/logo_azul.webp";
     width: 100%;
   }
 
-  /* Sticky navigation styles */
-  .nav-sticky {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 50;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
-    background-color: rgba(247, 245, 250, 0.95);
-  }
-
-  /* Submenu sticky positioning */
-  .submenu-sticky {
-    position: fixed;
-    top: var(--nav-height, 80px);
-    left: 0;
-    right: 0;
-    z-index: 45;
-  }
-
   /* Transición suave para el nav */
   #main-nav {
     transition: all 0.3s ease;
   }
+
+  /* Offcanvas abierto */
+  .offcanvas-open {
+    transform: translateX(0);
+  }
+
+  /* Mobile submenu abierto */
+  .mobile-submenu-open {
+    display: block;
+  }
+
+  /* Mobile chevron rotado */
+  .mobile-chevron-rotated {
+    transform: rotate(180deg);
+  }
 </style>
 
 <script>
-  class NavigationMenu {
+  class ResponsiveNavigationMenu {
     private items: NodeListOf<Element>;
     private submenu: HTMLElement;
     private nav: HTMLElement;
     private submenuContent: Record<string, string>;
-    private navOffset: number;
+    private mobileMenuBtn: HTMLElement;
+    private mobileOffcanvas: HTMLElement;
+    private mobileOverlay: HTMLElement;
+    private closeOffcanvasBtn: HTMLElement;
+    private mobileDropdownBtns: NodeListOf<Element>;
 
     constructor() {
       this.items = document.querySelectorAll(".nav-item");
       this.submenu = document.getElementById("submenu") as HTMLElement;
       this.nav = document.getElementById("main-nav") as HTMLElement;
-      this.navOffset = 0;
+      this.mobileMenuBtn = document.getElementById(
+        "mobile-menu-btn",
+      ) as HTMLElement;
+      this.mobileOffcanvas = document.getElementById(
+        "mobile-offcanvas",
+      ) as HTMLElement;
+      this.mobileOverlay = document.getElementById(
+        "mobile-overlay",
+      ) as HTMLElement;
+      this.closeOffcanvasBtn = document.getElementById(
+        "close-offcanvas",
+      ) as HTMLElement;
+      this.mobileDropdownBtns = document.querySelectorAll(
+        ".mobile-dropdown-btn",
+      );
 
       this.submenuContent = {
         Inicio: "",
@@ -143,62 +517,96 @@ import logo from "../images/logo_azul.webp";
 
     private getPreparatoriaContent(): string {
       return `
-        <div class="p-5">
-          <ul class="flex flex-col gap-2">
-            <li class="hover:text-[var(--navy-blue)] cursor-pointer transition-colors duration-200">Preparatoria de 2 años</li>
-            <li class="hover:text-[var(--navy-blue)] cursor-pointer transition-colors duration-200">Preparatoria de 3 años</li>
-            <li class="hover:text-[var(--navy-blue)] cursor-pointer transition-colors duration-200">Asistente Educativo</li>
-            <li class="hover:text-[var(--navy-blue)] cursor-pointer transition-colors duration-200">Asistente Jurídico Administrativo</li>
-            <li class="hover:text-[var(--navy-blue)] cursor-pointer transition-colors duration-200">Diseño Gráfico</li>
-            <li class="hover:text-[var(--navy-blue)] cursor-pointer transition-colors duration-200">Gastronomía</li>
-            <li class="hover:text-[var(--navy-blue)] cursor-pointer transition-colors duration-200">Tecnologías de la Información</li>
-          </ul>
+        <div class="py-6 px-8">
+          <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div class="space-y-2">
+                <div class="text-sm text-gray-500 font-light">Preparatoria</div>
+                <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Preparatoria de 2 años</a>
+                <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Preparatoria de 3 años</a>
+              </div>
+              <div class="space-y-2">
+                <div class="text-sm text-gray-500 font-light">Carreras Técnicas</div>
+                <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Asistente Educativo</a>
+                <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Asistente Jurídico Administrativo</a>
+                <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Diseño Gráfico</a>
+              </div>
+              <div class="space-y-2">
+                <div class="text-sm text-gray-500 font-light">Especialidades</div>
+                <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Gastronomía</a>
+                <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Tecnologías de la Información</a>
+              </div>
+            </div>
+          </div>
         </div>
       `;
     }
 
     private getNivelMedioContent(): string {
       return `
-        <div class="p-5">
-          <ul class="flex flex-col gap-2">
-            <li class="hover:text-[var(--navy-blue)] cursor-pointer transition-colors duration-200">Enfermería General</li>
-          </ul>
+        <div class="py-6 px-8">
+          <div class="max-w-4xl mx-auto">
+            <div class="space-y-2">
+              <div class="text-sm text-gray-500 font-light">Nivel Medio Superior</div>
+              <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Enfermería General</a>
+            </div>
+          </div>
         </div>
       `;
     }
 
     private getNivelSuperiorContent(): string {
       return `
-        <div class="p-5">
-          <ul class="flex flex-col gap-2">
-            <li class="hover:text-[var(--navy-blue)] cursor-pointer transition-colors duration-200">Lic. Contaduría</li>
-            <li class="hover:text-[var(--navy-blue)] cursor-pointer transition-colors duration-200">Lic. Enfermería</li>
-            <li class="hover:text-[var(--navy-blue)] cursor-pointer transition-colors duration-200">Lic. Idiomas y Relaciones Internacionales</li>
-            <li class="hover:text-[var(--navy-blue)] cursor-pointer transition-colors duration-200">Lic. Mercadotecnia y Publicidad</li>
-            <li class="hover:text-[var(--navy-blue)] cursor-pointer transition-colors duration-200">Lic. Nutrición</li>
-            <li class="hover:text-[var(--navy-blue)] cursor-pointer transition-colors duration-200">Lic. Psicología</li>
-            <li class="hover:text-[var(--navy-blue)] cursor-pointer transition-colors duration-200">Lic. Seguridad e Higiene Industrial</li>
-            <li class="hover:text-[var(--navy-blue)] cursor-pointer transition-colors duration-200">Ing. Energías Renovables</li>
-            <li class="hover:text-[var(--navy-blue)] cursor-pointer transition-colors duration-200">Ing. Tecnologías de la Información y Negocios</li>
-          </ul>
+        <div class="py-6 px-8">
+          <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div class="space-y-2">
+                <div class="text-sm text-gray-500 font-light">Ciencias de la Salud</div>
+                <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Lic. Enfermería</a>
+                <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Lic. Nutrición</a>
+                <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Lic. Psicología</a>
+              </div>
+              <div class="space-y-2">
+                <div class="text-sm text-gray-500 font-light">Ciencias Económico Administrativas</div>
+                <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Lic. Contaduría</a>
+                <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Lic. Mercadotecnia y Publicidad</a>
+              </div>
+              <div class="space-y-2">
+                <div class="text-sm text-gray-500 font-light">Ingenierías y Humanidades</div>
+                <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Ing. Energías Renovables</a>
+                <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Ing. Tecnologías de la Información</a>
+                <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Lic. Idiomas y Relaciones Internacionales</a>
+                <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Lic. Seguridad e Higiene Industrial</a>
+              </div>
+            </div>
+          </div>
         </div>
       `;
     }
 
     private getMaestriasContent(): string {
       return `
-        <div class="p-5">
-          <ul class="flex flex-col gap-2">
-            <li class="hover:text-[var(--navy-blue)] cursor-pointer transition-colors duration-200">Administración y Gestión Ambiental</li>
-            <li class="hover:text-[var(--navy-blue)] cursor-pointer transition-colors duration-200">Ciencias de la Psicología Educativa</li>
-            <li class="hover:text-[var(--navy-blue)] cursor-pointer transition-colors duration-200">Investigación y Ética</li>
-            <li class="hover:text-[var(--navy-blue)] cursor-pointer transition-colors duration-200">Maestría en Nutrición Aplicada</li>
-            <li class="hover:text-[var(--navy-blue)] cursor-pointer transition-colors duration-200">Psicología Forense</li>
-          </ul>
+        <div class="py-6 px-8">
+          <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="space-y-2">
+                <div class="text-sm text-gray-500 font-light">Postgrados</div>
+                <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Administración y Gestión Ambiental</a>
+                <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Ciencias de la Psicología Educativa</a>
+                <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Investigación y Ética</a>
+              </div>
+              <div class="space-y-2">
+                <div class="text-sm text-gray-500 font-light">Especialidades</div>
+                <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Maestría en Nutrición Aplicada</a>
+                <a href="#" class="block text-gray-700 hover:text-[var(--federal-blue)] font-light transition-colors duration-200">Psicología Forense</a>
+              </div>
+            </div>
+          </div>
         </div>
       `;
     }
 
+    // Desktop methods
     private showSubmenu(content: string): void {
       this.submenu.innerHTML = content;
       this.submenu.style.height = "auto";
@@ -219,6 +627,65 @@ import logo from "../images/logo_azul.webp";
       }
     }
 
+    // Mobile methods
+    private openMobileMenu(): void {
+      this.mobileOffcanvas.classList.add("offcanvas-open");
+      this.mobileOverlay.classList.remove("hidden");
+      document.body.style.overflow = "hidden";
+    }
+
+    private closeMobileMenu(): void {
+      this.mobileOffcanvas.classList.remove("offcanvas-open");
+      this.mobileOverlay.classList.add("hidden");
+      document.body.style.overflow = "";
+
+      // Cerrar todos los submenus móviles
+      const openSubmenus = document.querySelectorAll(".mobile-submenu");
+      openSubmenus.forEach((submenu) => {
+        submenu.classList.remove("mobile-submenu-open");
+        submenu.classList.add("hidden");
+      });
+
+      const rotatedChevrons = document.querySelectorAll(".mobile-chevron");
+      rotatedChevrons.forEach((chevron) => {
+        chevron.classList.remove("mobile-chevron-rotated");
+      });
+    }
+
+    private toggleMobileSubmenu(btn: Element): void {
+      const submenu = btn.nextElementSibling as HTMLElement;
+      const chevron = btn.querySelector(".mobile-chevron") as HTMLElement;
+
+      if (submenu.classList.contains("hidden")) {
+        // Cerrar otros submenus
+        const otherSubmenus = document.querySelectorAll(".mobile-submenu");
+        otherSubmenus.forEach((other) => {
+          if (other !== submenu) {
+            other.classList.add("hidden");
+            other.classList.remove("mobile-submenu-open");
+          }
+        });
+
+        const otherChevrons = document.querySelectorAll(".mobile-chevron");
+        otherChevrons.forEach((other) => {
+          if (other !== chevron) {
+            other.classList.remove("mobile-chevron-rotated");
+          }
+        });
+
+        // Abrir este submenu
+        submenu.classList.remove("hidden");
+        submenu.classList.add("mobile-submenu-open");
+        chevron.classList.add("mobile-chevron-rotated");
+      } else {
+        // Cerrar este submenu
+        submenu.classList.add("hidden");
+        submenu.classList.remove("mobile-submenu-open");
+        chevron.classList.remove("mobile-chevron-rotated");
+      }
+    }
+
+    // Desktop event handlers
     private handleMouseEnter = (item: Element): void => {
       const key = item.querySelector("span")?.textContent?.trim() || "";
 
@@ -250,42 +717,14 @@ import logo from "../images/logo_azul.webp";
         (!this.nav.contains(related) && !this.submenu.contains(related))
       ) {
         this.hideSubmenu();
-        // Rotar todos los chevrons de vuelta
         this.items.forEach((item) => {
           this.rotateChevron(item, false);
         });
       }
     };
 
-    private handleScroll = (): void => {
-      const scrollTop =
-        window.pageYOffset || document.documentElement.scrollTop;
-
-      if (scrollTop >= this.navOffset) {
-        this.nav.classList.add("nav-sticky");
-        this.submenu.classList.add("submenu-sticky");
-
-        // Calcular y establecer la altura del nav para el submenu
-        const navHeight = this.nav.offsetHeight;
-        document.documentElement.style.setProperty(
-          "--nav-height",
-          `${navHeight}px`,
-        );
-      } else {
-        this.nav.classList.remove("nav-sticky");
-        this.submenu.classList.remove("submenu-sticky");
-      }
-    };
-
-    private calculateNavOffset(): void {
-      // Calcular la posición inicial del nav (después de la barra negra)
-      const blackBar = document.querySelector(".bg-black") as HTMLElement;
-      if (blackBar) {
-        this.navOffset = blackBar.offsetHeight;
-      }
-    }
-
     private bindEvents(): void {
+      // Desktop events
       this.items.forEach((item) => {
         item.addEventListener("mouseenter", () => this.handleMouseEnter(item));
       });
@@ -293,19 +732,35 @@ import logo from "../images/logo_azul.webp";
       this.nav.addEventListener("mouseleave", this.handleMouseLeave);
       this.submenu.addEventListener("mouseleave", this.handleMouseLeave);
 
-      // Agregar evento de scroll
-      window.addEventListener("scroll", this.handleScroll);
+      // Mobile events
+      this.mobileMenuBtn.addEventListener("click", () => this.openMobileMenu());
+      this.closeOffcanvasBtn.addEventListener("click", () =>
+        this.closeMobileMenu(),
+      );
+      this.mobileOverlay.addEventListener("click", () =>
+        this.closeMobileMenu(),
+      );
+
+      this.mobileDropdownBtns.forEach((btn) => {
+        btn.addEventListener("click", () => this.toggleMobileSubmenu(btn));
+      });
+
+      // Close mobile menu on escape
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          this.closeMobileMenu();
+        }
+      });
     }
 
     private init(): void {
       if (this.submenu && this.nav) {
-        this.calculateNavOffset();
         this.bindEvents();
       }
     }
   }
 
   document.addEventListener("DOMContentLoaded", () => {
-    new NavigationMenu();
+    new ResponsiveNavigationMenu();
   });
 </script>

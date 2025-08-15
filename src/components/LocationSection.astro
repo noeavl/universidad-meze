@@ -1,0 +1,173 @@
+---
+// src/components/LocationSection.astro
+---
+
+<section class="py-16 lg:py-24 bg-[var(--alice-blue)]">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+        <!-- Título -->
+        <div class="text-center mb-16">
+            <h2
+                class="text-3xl lg:text-4xl font-light text-[var(--federal-blue)] mb-8 tracking-wide"
+            >
+                Ubicación
+            </h2>
+            <div class="w-12 h-px bg-[var(--federal-blue)] mx-auto"></div>
+        </div>
+
+        <!-- Grid principal -->
+        <div class="grid lg:grid-cols-5 gap-12 lg:gap-16">
+            <!-- Información (2 columnas) -->
+            <div class="lg:col-span-2 space-y-12">
+                <!-- Dirección -->
+                <div>
+                    <h3
+                        class="text-lg font-medium text-[var(--federal-blue)] mb-4 tracking-wide"
+                    >
+                        Dirección
+                    </h3>
+                    <div class="text-gray-600 font-light leading-relaxed">
+                        Calz. Ávila Camacho #3750 Ote.<br />
+                        Torreón, Coahuila<br />
+                        México
+                    </div>
+                </div>
+
+                <!-- Horarios -->
+                <div>
+                    <h3
+                        class="text-lg font-medium text-[var(--federal-blue)] mb-4 tracking-wide"
+                    >
+                        Horarios
+                    </h3>
+                    <div class="space-y-2 text-gray-600 font-light">
+                        <div class="flex justify-between">
+                            <span>Lunes – Viernes</span>
+                            <span>7:00 – 21:00</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Sábado</span>
+                            <span>8:00 – 14:00</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Domingo</span>
+                            <span>Cerrado</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contacto -->
+                <div>
+                    <h3
+                        class="text-lg font-medium text-[var(--federal-blue)] mb-4 tracking-wide"
+                    >
+                        Contacto
+                    </h3>
+                    <div class="space-y-2 text-gray-600 font-light">
+                        <div>
+                            <a
+                                href="tel:+528717216355"
+                                class="hover:text-[var(--federal-blue)] transition-colors duration-200"
+                            >
+                                +52 871 721 63 55
+                            </a>
+                        </div>
+                        <div>
+                            <a
+                                href="mailto:contacto@meze.com.mx"
+                                class="hover:text-[var(--federal-blue)] transition-colors duration-200"
+                            >
+                                contacto@meze.com.mx
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botón direcciones -->
+                <div class="pt-4">
+                    <button
+                        onclick="openDirections()"
+                        class="text-[var(--federal-blue)] font-medium hover:text-[var(--navy-blue)] transition-colors duration-200 flex items-center space-x-2"
+                    >
+                        <span>Obtener direcciones</span>
+                        <svg
+                            class="w-4 h-4"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="1.5"
+                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                            ></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mapa (3 columnas) -->
+            <div class="lg:col-span-3">
+                <div
+                    class="h-full bg-white rounded-sm overflow-hidden shadow-sm"
+                >
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3599.40469277268!2d-103.40829692472306!3d25.558199477386335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x868fdbc6284829c1%3A0xbb3f3767a6f8abf1!2sUniversidad%20MEZE!5e0!3m2!1ses!2smx!4v1755272086808!5m2!1ses!2smx"
+                        width="100%"
+                        height="100%"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- Información adicional -->
+        <div class="mt-16 pt-12 border-t border-gray-200">
+            <div class="grid md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-sm text-gray-500 font-light mb-1">
+                        Estacionamiento
+                    </div>
+                    <div class="text-[var(--federal-blue)] font-medium">
+                        Gratuito
+                    </div>
+                </div>
+                <div>
+                    <div class="text-sm text-gray-500 font-light mb-1">
+                        Acceso
+                    </div>
+                    <div class="text-[var(--federal-blue)] font-medium">
+                        Universal
+                    </div>
+                </div>
+                <div>
+                    <div class="text-sm text-gray-500 font-light mb-1">
+                        Wi-Fi
+                    </div>
+                    <div class="text-[var(--federal-blue)] font-medium">
+                        Disponible
+                    </div>
+                </div>
+                <div>
+                    <div class="text-sm text-gray-500 font-light mb-1">
+                        Seguridad
+                    </div>
+                    <div class="text-[var(--federal-blue)] font-medium">
+                        24/7
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    function openDirections() {
+        const destination =
+            "Universidad MEZE, Calz. Ávila Camacho 3750 Ote, Torreón, Coah.";
+        const url = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(destination)}`;
+        window.open(url, "_blank");
+    }
+</script>

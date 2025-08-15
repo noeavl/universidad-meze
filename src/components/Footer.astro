@@ -1,115 +1,84 @@
-<footer
-  class="py-8 px-4
-        sm:py-12 sm:px-8
-        md:py-16 md:px-12
-        lg:py-20 lg:px-20
-        xl:py-24 xl:px-32
-        2xl:py-50 2xl:px-60"
->
-  <div class="flex flex-col gap-8 sm:gap-12 md:gap-16 lg:gap-20">
-    <!-- Título Principal -->
-    <div class="text-center sm:text-left">
-      <span
-        class="font-bold
-                    text-4xl
-                    sm:text-5xl
-                    md:text-6xl
-                    lg:text-7xl
-                    xl:text-8xl
-                    block leading-tight"
+---
+// src/components/Footer.astro
+---
+
+<footer class="py-16 lg:py-24">
+  <div class="max-w-6xl mx-auto px-6 lg:px-8">
+    <!-- Título principal -->
+    <div class="text-center mb-16 lg:mb-20">
+      <h2
+        class="text-4xl lg:text-6xl font-light text-[var(--federal-blue)] mb-6 tracking-wide"
       >
         SOMOS MEZE
-      </span>
-      <span
-        class="font-light
-                    text-lg
-                    sm:text-xl
-                    md:text-2xl
-                    block mt-2"
-      >
+      </h2>
+      <p class="text-lg lg:text-xl text-gray-600 font-light">
         Formando generaciones de líderes
-      </span>
+      </p>
+      <div class="w-12 h-px bg-[var(--federal-blue)] mx-auto mt-8"></div>
     </div>
 
-    <!-- Grid de Información -->
-    <div
-      class="grid
-                grid-cols-1
-                sm:grid-cols-2
-                lg:grid-cols-3
-                gap-8
-                sm:gap-10
-                md:gap-12
-                lg:gap-16
-                xl:gap-20"
-    >
+    <!-- Grid de información -->
+    <div class="grid md:grid-cols-3 gap-12 lg:gap-16 mb-16">
       <!-- Contacto -->
       <div>
-        <span class="font-bold text-lg sm:text-xl">Contacto</span>
-        <div class="flex flex-col gap-4 sm:gap-5 pl-2 sm:pl-4 mt-4 sm:mt-5">
+        <h3
+          class="text-lg font-medium text-[var(--federal-blue)] mb-6 tracking-wide"
+        >
+          Contacto
+        </h3>
+        <div class="space-y-6">
+          <!-- Teléfonos -->
           <div>
-            <span class="font-semibold text-sm sm:text-base">Teléfonos</span>
-            <div
-              class="flex flex-col gap-2 sm:gap-3 pl-1 sm:pl-2 font-light mt-2"
-            >
-              <a
-                href="tel:+528717216355"
-                class="underline
-                                    text-sm sm:text-base
-                                    hover:text-[var(--federal-blue)]
-                                    transition-colors duration-200"
-              >
-                +52 871 721 63 55
-              </a>
-              <a
-                href="tel:+528711930543"
-                class="underline
-                                    text-sm sm:text-base
-                                    hover:text-[var(--federal-blue)]
-                                    transition-colors duration-200"
-              >
-                +52 871 193 05 43
-              </a>
-              <a
-                href="tel:+528714550834"
-                class="underline
-                                    text-sm sm:text-base
-                                    hover:text-[var(--federal-blue)]
-                                    transition-colors duration-200"
-              >
-                +52 871 455 08 34
-              </a>
+            <div class="text-sm text-gray-500 font-light mb-2">Teléfonos</div>
+            <div class="space-y-1 text-gray-600 font-light">
+              <div>
+                <a
+                  href="tel:+528717216355"
+                  class="hover:text-[var(--federal-blue)] transition-colors duration-200"
+                >
+                  +52 871 721 63 55
+                </a>
+              </div>
+              <div>
+                <a
+                  href="tel:+528711930543"
+                  class="hover:text-[var(--federal-blue)] transition-colors duration-200"
+                >
+                  +52 871 193 05 43
+                </a>
+              </div>
+              <div>
+                <a
+                  href="tel:+528714550834"
+                  class="hover:text-[var(--federal-blue)] transition-colors duration-200"
+                >
+                  +52 871 455 08 34
+                </a>
+              </div>
             </div>
           </div>
 
+          <!-- WhatsApp -->
           <div>
-            <span class="font-semibold text-sm sm:text-base">WhatsApp</span>
-            <div class="pl-1 sm:pl-2 font-light mt-2">
+            <div class="text-sm text-gray-500 font-light mb-2">WhatsApp</div>
+            <div class="text-gray-600 font-light">
               <a
                 href="https://wa.me/8715774839"
                 target="_blank"
-                class="text-sm sm:text-base
-                                       hover:text-[var(--federal-blue)]
-                                       hover:underline
-                                       transition-colors duration-200"
+                class="hover:text-[var(--federal-blue)] transition-colors duration-200"
               >
                 871 577 48 39
               </a>
             </div>
           </div>
 
+          <!-- Email -->
           <div>
-            <span class="font-semibold text-sm sm:text-base"
-              >Correo Electrónico</span
-            >
-            <div class="pl-1 sm:pl-2 font-light mt-2">
+            <div class="text-sm text-gray-500 font-light mb-2">Email</div>
+            <div class="text-gray-600 font-light">
               <a
                 href="mailto:contacto@meze.com.mx"
-                class="text-sm sm:text-base
-                                       hover:text-[var(--federal-blue)]
-                                       hover:underline
-                                       break-all
-                                       transition-colors duration-200"
+                class="hover:text-[var(--federal-blue)] transition-colors duration-200"
               >
                 contacto@meze.com.mx
               </a>
@@ -120,135 +89,125 @@
 
       <!-- Dirección -->
       <div>
-        <span class="font-bold text-lg sm:text-xl">Dirección</span>
-        <div class="pl-2 sm:pl-4 mt-4 sm:mt-5 font-light">
-          <span class="text-sm sm:text-base">
-            Calz. Ávila Camacho #3750 Ote. <br />Torreón, Coah.
-          </span>
+        <h3
+          class="text-lg font-medium text-[var(--federal-blue)] mb-6 tracking-wide"
+        >
+          Dirección
+        </h3>
+        <div class="text-gray-600 font-light leading-relaxed">
+          Calz. Ávila Camacho #3750 Ote.<br />
+          Torreón, Coahuila<br />
+          México
         </div>
       </div>
 
-      <!-- Enlaces Rápidos -->
-      <div class="sm:col-span-2 lg:col-span-1">
-        <span class="font-bold text-lg sm:text-xl">Enlaces Rápidos</span>
-        <div
-          class="flex flex-col
-                        sm:flex-row
-                        lg:flex-col
-                        pl-2 sm:pl-4
-                        mt-4 sm:mt-5
-                        font-light
-                        gap-2 sm:gap-4 lg:gap-2"
+      <!-- Enlaces -->
+      <div>
+        <h3
+          class="text-lg font-medium text-[var(--federal-blue)] mb-6 tracking-wide"
         >
-          <a
-            href="/"
-            class="text-sm sm:text-base
-                            hover:text-[var(--federal-blue)]
-                            hover:underline
-                            transition-colors duration-200"
-          >
-            Inicio
-          </a>
-          <a
-            href="/preparatoria"
-            class="text-sm sm:text-base
-                            hover:text-[var(--federal-blue)]
-                            hover:underline
-                            transition-colors duration-200"
-          >
-            Preparatoria
-          </a>
-          <a
-            href="/nivel-medio"
-            class="text-sm sm:text-base
-                            hover:text-[var(--federal-blue)]
-                            hover:underline
-                            transition-colors duration-200"
-          >
-            Nivel Medio
-          </a>
-          <a
-            href="/contacto"
-            class="text-sm sm:text-base
-                            hover:text-[var(--federal-blue)]
-                            hover:underline
-                            transition-colors duration-200"
-          >
-            Contacto
-          </a>
+          Enlaces
+        </h3>
+        <div class="space-y-3 text-gray-600 font-light">
+          <div>
+            <a
+              href="/"
+              class="hover:text-[var(--federal-blue)] transition-colors duration-200"
+            >
+              Inicio
+            </a>
+          </div>
+          <div>
+            <a
+              href="/preparatoria"
+              class="hover:text-[var(--federal-blue)] transition-colors duration-200"
+            >
+              Preparatoria
+            </a>
+          </div>
+          <div>
+            <a
+              href="/nivel-medio"
+              class="hover:text-[var(--federal-blue)] transition-colors duration-200"
+            >
+              Nivel Medio
+            </a>
+          </div>
+          <div>
+            <a
+              href="/nivel-superior"
+              class="hover:text-[var(--federal-blue)] transition-colors duration-200"
+            >
+              Nivel Superior
+            </a>
+          </div>
+          <div>
+            <a
+              href="/maestrias"
+              class="hover:text-[var(--federal-blue)] transition-colors duration-200"
+            >
+              Maestrías
+            </a>
+          </div>
+          <div>
+            <a
+              href="/contacto"
+              class="hover:text-[var(--federal-blue)] transition-colors duration-200"
+            >
+              Contacto
+            </a>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Redes Sociales -->
-    <div class="flex justify-center sm:justify-start gap-4 sm:gap-5">
-      <a
-        href="https://www.facebook.com/MEZE.sitio.oficial/"
-        target="_blank"
-        class="group
-                       bg-gray-200
-                       hover:bg-[var(--federal-blue)]
-                       shadow-sm
-                       h-10 w-10
-                       sm:h-12 sm:w-12
-                       hover:shadow-lg
-                       flex items-center justify-center
-                       transition-all duration-300
-                       rounded-full"
-      >
-        <i
-          class="fa-brands fa-facebook
-                        group-hover:text-white
-                        text-[var(--federal-blue)]
-                        text-base sm:text-lg"
-        ></i>
-      </a>
+    <!-- Redes sociales -->
+    <div class="pt-12 border-t border-gray-200">
+      <div class="flex justify-center space-x-8">
+        <a
+          href="https://www.facebook.com/MEZE.sitio.oficial/"
+          target="_blank"
+          class="text-gray-400 hover:text-[var(--federal-blue)] transition-colors duration-200"
+        >
+          <span class="sr-only">Facebook</span>
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+            ></path>
+          </svg>
+        </a>
 
-      <a
-        href="https://www.instagram.com/soymeze"
-        target="_blank"
-        class="group
-                       bg-gray-200
-                       shadow-sm
-                       hover:shadow-lg
-                       h-10 w-10
-                       sm:h-12 sm:w-12
-                       flex
-                       hover:bg-[var(--federal-blue)]
-                       items-center justify-center
-                       rounded-full
-                       transition-all duration-300"
-      >
-        <i
-          class="fa-brands fa-instagram
-                        group-hover:text-white
-                        text-[var(--federal-blue)]
-                        text-base sm:text-lg"
-        ></i>
-      </a>
+        <a
+          href="https://www.instagram.com/soymeze"
+          target="_blank"
+          class="text-gray-400 hover:text-[var(--federal-blue)] transition-colors duration-200"
+        >
+          <span class="sr-only">Instagram</span>
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987c6.62 0 11.987-5.367 11.987-11.987C24.014 5.367 18.637.001 12.017.001zM12 5.351c3.658 0 6.637 2.979 6.637 6.637S15.658 18.625 12 18.625s-6.637-2.979-6.637-6.637S8.342 5.351 12 5.351zM12 16.508c2.289 0 4.132-1.843 4.132-4.132S14.289 8.244 12 8.244s-4.132 1.843-4.132 4.132S9.711 16.508 12 16.508z"
+            ></path>
+          </svg>
+        </a>
 
-      <a
-        href="https://wa.me/8715774839"
-        target="_blank"
-        class="group
-                       bg-gray-200
-                       shadow-sm
-                       hover:shadow-lg
-                       h-10 w-10
-                       sm:h-12 sm:w-12
-                       flex
-                       hover:bg-[var(--federal-blue)]
-                       items-center justify-center
-                       rounded-full
-                       transition-all duration-300"
-      >
-        <i
-          class="fa-brands fa-whatsapp
-                        group-hover:text-white
-                        text-[var(--federal-blue)]
-                        text-base sm:text-lg"
-        ></i>
-      </a>
+        <a
+          href="https://wa.me/8715774839"
+          target="_blank"
+          class="text-gray-400 hover:text-[var(--federal-blue)] transition-colors duration-200"
+        >
+          <span class="sr-only">WhatsApp</span>
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"
+            ></path>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Copyright -->
+      <div class="text-center mt-8 text-sm text-gray-500 font-light">
+        © 2024 Universidad MEZE. Todos los derechos reservados.
+      </div>
     </div>
   </div>
 </footer>

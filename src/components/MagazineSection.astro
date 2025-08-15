@@ -1,0 +1,148 @@
+---
+// src/components/MagazineSection.astro
+import { Image } from "astro:assets";
+import revistaEnero from "../images/revista_enero.webp";
+import revistaFebrero from "../images/revista_febrero.webp";
+import revistaMarzo from "../images/revista_marzo.webp";
+import revistaJunio from "../images/revista_junio.webp";
+
+// Define las revistas con sus datos
+const revistas = [
+  {
+    mes: "ENERO",
+    año: "2025",
+    imagen: revistaEnero,
+    pdfUrl: "/pdfs/revista-enero-2025.pdf",
+    alt: "Revista Enero 2025"
+  },
+  {
+    mes: "FEBRERO", 
+    año: "2025",
+    imagen: revistaFebrero,
+    pdfUrl: "/pdfs/revista-febrero-2025.pdf",
+    alt: "Revista Febrero 2025"
+  },
+  {
+    mes: "MARZO",
+    año: "2025", 
+    imagen: revistaMarzo,
+    pdfUrl: "/pdfs/revista-marzo-2025.pdf",
+    alt: "Revista Marzo 2025"
+  },
+  {
+    mes: "JUNIO",
+    año: "2025",
+    imagen: revistaJunio, 
+    pdfUrl: "/pdfs/revista-junio-2025.pdf",
+    alt: "Revista Junio 2025"
+  }
+];
+---
+
+<section class="py-16 lg:py-24">
+  <div class="max-w-4xl mx-auto px-6 lg:px-8">
+    <!-- Título minimalista -->
+    <div class="text-center mb-16">
+      <h2 class="text-3xl lg:text-4xl font-light text-[var(--federal-blue)] mb-8 tracking-wide">
+        Revista Corporativo MEZE
+      </h2>
+      <div class="w-12 h-px bg-[var(--federal-blue)] mx-auto"></div>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="space-y-16">
+      <!-- Descripción -->
+      <div class="text-center max-w-2xl mx-auto">
+        <p class="text-lg text-gray-600 leading-relaxed font-light">
+          Nuestra revista nos acerca a la visión de todos los niveles educativos que MEZE ofrece, 
+          así como información relevante que te ayudará a disfrutar al máximo la experiencia MEZE.
+        </p>
+      </div>
+
+      <!-- Lista de contenidos -->
+      <div class="grid md:grid-cols-2 gap-x-16 gap-y-8 max-w-3xl mx-auto">
+        <div class="space-y-6">
+          <div class="flex items-start space-x-4">
+            <div class="w-1 h-1 bg-[var(--federal-blue)] rounded-full mt-3 flex-shrink-0"></div>
+            <span class="text-gray-700 font-light">Calendarización de tu carrera</span>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div class="w-1 h-1 bg-[var(--federal-blue)] rounded-full mt-3 flex-shrink-0"></div>
+            <span class="text-gray-700 font-light">Eventos y pláticas</span>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div class="w-1 h-1 bg-[var(--federal-blue)] rounded-full mt-3 flex-shrink-0"></div>
+            <span class="text-gray-700 font-light">Artículos de tus directivos</span>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div class="w-1 h-1 bg-[var(--federal-blue)] rounded-full mt-3 flex-shrink-0"></div>
+            <span class="text-gray-700 font-light">Publicaciones de moda</span>
+          </div>
+        </div>
+        
+        <div class="space-y-6">
+          <div class="flex items-start space-x-4">
+            <div class="w-1 h-1 bg-[var(--federal-blue)] rounded-full mt-3 flex-shrink-0"></div>
+            <span class="text-gray-700 font-light">Tips para nuevo ingreso y egreso</span>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div class="w-1 h-1 bg-[var(--federal-blue)] rounded-full mt-3 flex-shrink-0"></div>
+            <span class="text-gray-700 font-light">Promociones y ofertas educativas</span>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div class="w-1 h-1 bg-[var(--federal-blue)] rounded-full mt-3 flex-shrink-0"></div>
+            <span class="text-gray-700 font-light">Bolsa de trabajo</span>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div class="w-1 h-1 bg-[var(--federal-blue)] rounded-full mt-3 flex-shrink-0"></div>
+            <span class="text-gray-700 font-light">Y mucho más</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Revistas -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-2xl mx-auto">
+        {revistas.map((revista) => (
+          <a 
+            href={revista.pdfUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group cursor-pointer block"
+          >
+            <div class="bg-white border border-gray-200 rounded-sm shadow-sm transition-all duration-300 group-hover:shadow-md group-hover:-translate-y-1">
+              <!-- Imagen de la revista -->
+              <div class="aspect-[3/4] p-2">
+                <Image
+                  src={revista.imagen}
+                  alt={revista.alt}
+                  class="w-full h-full object-cover rounded-sm"
+                />
+              </div>
+              
+              <!-- Información de la revista -->
+              <div class="p-3 border-t border-gray-100">
+                <div class="text-xs text-[var(--federal-blue)] font-medium mb-1">
+                  {revista.mes}
+                </div>
+                <div class="text-[10px] text-gray-500">
+                  {revista.año}
+                </div>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <!-- Mensaje final -->
+      <div class="text-center space-y-6">
+        <p class="text-[var(--federal-blue)] font-medium">
+          En MEZE, siempre estamos contigo
+        </p>
+        <p class="text-sm text-gray-500 font-light">
+          Haz clic en las portadas para acceder a las revistas
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
