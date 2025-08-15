@@ -1,10 +1,25 @@
 @import "tailwindcss";
 @import '@fortawesome/fontawesome-free/css/all.min.css';
 
-@theme {
+:root {
   --federal-blue: #040053ff;
-  --ghost-white: #f7f5faff;
-  --vivid-sky-blue: #01dafdff;
+  /* Azul muy oscuro */
+  --royal-blue-traditional: #0A256Eff;
+  /* Azul oscuro tradicional */
   --navy-blue: #16077dff;
+  /* Azul marino */
+  --denim: #4462A7ff;
+  /* Azul denim */
+  --celestial-blue: #0A95D7ff;
+  /* Azul celestial */
+  --jordy-blue: #84BCEBff;
+  /* Azul jordy */
+  --vivid-sky-blue: #01dafdff;
+  /* Azul cielo vibrante */
   --powder-blue: #adc1e2ff;
+  /* Azul polvo */
+  --alice-blue: #EAF0F9ff;
+  /* Azul alice */
+  --ghost-white: #f7f5faff;
+  /* Blanco fantasma */
 }

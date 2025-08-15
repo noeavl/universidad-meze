@@ -1,82 +1,254 @@
-<footer class="h-screen py-50 px-60">
-  <div class="flex flex-col gap-20">
-    <div>
-      <span class="font-bold text-8xl">SOMOS MEZE</span>
-      <br />
-      <span class="font-light text-2xl">Formando generaciones de líderes</span>
+<footer
+  class="py-8 px-4
+        sm:py-12 sm:px-8
+        md:py-16 md:px-12
+        lg:py-20 lg:px-20
+        xl:py-24 xl:px-32
+        2xl:py-50 2xl:px-60"
+>
+  <div class="flex flex-col gap-8 sm:gap-12 md:gap-16 lg:gap-20">
+    <!-- Título Principal -->
+    <div class="text-center sm:text-left">
+      <span
+        class="font-bold
+                    text-4xl
+                    sm:text-5xl
+                    md:text-6xl
+                    lg:text-7xl
+                    xl:text-8xl
+                    block leading-tight"
+      >
+        SOMOS MEZE
+      </span>
+      <span
+        class="font-light
+                    text-lg
+                    sm:text-xl
+                    md:text-2xl
+                    block mt-2"
+      >
+        Formando generaciones de líderes
+      </span>
     </div>
-    <div class="flex gap-20">
+
+    <!-- Grid de Información -->
+    <div
+      class="grid
+                grid-cols-1
+                sm:grid-cols-2
+                lg:grid-cols-3
+                gap-8
+                sm:gap-10
+                md:gap-12
+                lg:gap-16
+                xl:gap-20"
+    >
+      <!-- Contacto -->
       <div>
-        <span class="font-bold text-xl">Contacto</span>
-        <div class="flex flex-col gap-5 pl-4 mt-5">
-          <div class="">
-            <span class="font-semibold">Telefenos</span>
-            <div class="flex flex-col gap-3 pl-2 font-light mt-2">
-              <span class="underline">+52 871 721 63 55</span>
-              <span class="underline">+52 871 193 05 43</span>
-              <span class="underline">+52 871 455 08 34</span>
+        <span class="font-bold text-lg sm:text-xl">Contacto</span>
+        <div class="flex flex-col gap-4 sm:gap-5 pl-2 sm:pl-4 mt-4 sm:mt-5">
+          <div>
+            <span class="font-semibold text-sm sm:text-base">Teléfonos</span>
+            <div
+              class="flex flex-col gap-2 sm:gap-3 pl-1 sm:pl-2 font-light mt-2"
+            >
+              <a
+                href="tel:+528717216355"
+                class="underline
+                                    text-sm sm:text-base
+                                    hover:text-[var(--federal-blue)]
+                                    transition-colors duration-200"
+              >
+                +52 871 721 63 55
+              </a>
+              <a
+                href="tel:+528711930543"
+                class="underline
+                                    text-sm sm:text-base
+                                    hover:text-[var(--federal-blue)]
+                                    transition-colors duration-200"
+              >
+                +52 871 193 05 43
+              </a>
+              <a
+                href="tel:+528714550834"
+                class="underline
+                                    text-sm sm:text-base
+                                    hover:text-[var(--federal-blue)]
+                                    transition-colors duration-200"
+              >
+                +52 871 455 08 34
+              </a>
             </div>
           </div>
+
           <div>
-            <span class="font-semibold">Whatsapp</span>
-            <div class="pl-2 font-light mt-2">
-              <span>871 577 48 39</span>
+            <span class="font-semibold text-sm sm:text-base">WhatsApp</span>
+            <div class="pl-1 sm:pl-2 font-light mt-2">
+              <a
+                href="https://wa.me/8715774839"
+                target="_blank"
+                class="text-sm sm:text-base
+                                       hover:text-[var(--federal-blue)]
+                                       hover:underline
+                                       transition-colors duration-200"
+              >
+                871 577 48 39
+              </a>
             </div>
           </div>
+
           <div>
-            <span class="font-semibold">Correo Electronico</span>
-            <div class="pl-2 font-light mt-2">
-              <span>contacto@meze.com.mx</span>
+            <span class="font-semibold text-sm sm:text-base"
+              >Correo Electrónico</span
+            >
+            <div class="pl-1 sm:pl-2 font-light mt-2">
+              <a
+                href="mailto:contacto@meze.com.mx"
+                class="text-sm sm:text-base
+                                       hover:text-[var(--federal-blue)]
+                                       hover:underline
+                                       break-all
+                                       transition-colors duration-200"
+              >
+                contacto@meze.com.mx
+              </a>
             </div>
           </div>
         </div>
       </div>
+
+      <!-- Dirección -->
       <div>
-        <span class="font-bold text-xl">Dirección</span>
-        <div class="pl-4 mt-5 font-light">
-          <span>Calz. Ávila Camacho #3750 Ote. <br />Torreón, Coah.</span>
+        <span class="font-bold text-lg sm:text-xl">Dirección</span>
+        <div class="pl-2 sm:pl-4 mt-4 sm:mt-5 font-light">
+          <span class="text-sm sm:text-base">
+            Calz. Ávila Camacho #3750 Ote. <br />Torreón, Coah.
+          </span>
         </div>
       </div>
-      <div>
-        <span class="font-bold text-xl">Encales Rápidos</span>
-        <div class="flex flex-col pl-4 mt-5 font-light">
-          <span>Inicio</span>
-          <span>Preparatoria</span>
-          <span>Nivel Medio</span>
-          <span></span>
+
+      <!-- Enlaces Rápidos -->
+      <div class="sm:col-span-2 lg:col-span-1">
+        <span class="font-bold text-lg sm:text-xl">Enlaces Rápidos</span>
+        <div
+          class="flex flex-col
+                        sm:flex-row
+                        lg:flex-col
+                        pl-2 sm:pl-4
+                        mt-4 sm:mt-5
+                        font-light
+                        gap-2 sm:gap-4 lg:gap-2"
+        >
+          <a
+            href="/"
+            class="text-sm sm:text-base
+                            hover:text-[var(--federal-blue)]
+                            hover:underline
+                            transition-colors duration-200"
+          >
+            Inicio
+          </a>
+          <a
+            href="/preparatoria"
+            class="text-sm sm:text-base
+                            hover:text-[var(--federal-blue)]
+                            hover:underline
+                            transition-colors duration-200"
+          >
+            Preparatoria
+          </a>
+          <a
+            href="/nivel-medio"
+            class="text-sm sm:text-base
+                            hover:text-[var(--federal-blue)]
+                            hover:underline
+                            transition-colors duration-200"
+          >
+            Nivel Medio
+          </a>
+          <a
+            href="/contacto"
+            class="text-sm sm:text-base
+                            hover:text-[var(--federal-blue)]
+                            hover:underline
+                            transition-colors duration-200"
+          >
+            Contacto
+          </a>
         </div>
       </div>
     </div>
 
-    <div class="flex gap-5">
+    <!-- Redes Sociales -->
+    <div class="flex justify-center sm:justify-start gap-4 sm:gap-5">
       <a
         href="https://www.facebook.com/MEZE.sitio.oficial/"
         target="_blank"
-        class="group bg-[var(--ghost-white)] hover:bg-[var(--federal-blue)] shadow-sm h-10 w-10 hover:shadow-lg flex items-center justify-center transition-all duration-300 rounded-full"
+        class="group
+                       bg-gray-200
+                       hover:bg-[var(--federal-blue)]
+                       shadow-sm
+                       h-10 w-10
+                       sm:h-12 sm:w-12
+                       hover:shadow-lg
+                       flex items-center justify-center
+                       transition-all duration-300
+                       rounded-full"
       >
-        <i class="fa-brands fa-facebook group-hover:text-[var(--ghost-white)]"
+        <i
+          class="fa-brands fa-facebook
+                        group-hover:text-white
+                        text-[var(--federal-blue)]
+                        text-base sm:text-lg"
         ></i>
       </a>
+
       <a
         href="https://www.instagram.com/soymeze"
         target="_blank"
-        class="group shadow-sm hover:shadow-lg h-10 w-10 flex hover:bg-[var(--federal-blue)] items-center justify-center rounded-full transition-all duration-300"
+        class="group
+                       bg-gray-200
+                       shadow-sm
+                       hover:shadow-lg
+                       h-10 w-10
+                       sm:h-12 sm:w-12
+                       flex
+                       hover:bg-[var(--federal-blue)]
+                       items-center justify-center
+                       rounded-full
+                       transition-all duration-300"
       >
         <i
-          class="fa-brands fa-instagram group-hover:text-[var(--ghost-white)] text-[var(--federal-blue)] fa-lg"
+          class="fa-brands fa-instagram
+                        group-hover:text-white
+                        text-[var(--federal-blue)]
+                        text-base sm:text-lg"
         ></i>
       </a>
+
       <a
         href="https://wa.me/8715774839"
         target="_blank"
-        class="group shadow-sm hover:shadow-lg h-10 w-10 flex hover:bg-[var(--federal-blue)] items-center justify-center rounded-full transition-all duration-300"
+        class="group
+                       bg-gray-200
+                       shadow-sm
+                       hover:shadow-lg
+                       h-10 w-10
+                       sm:h-12 sm:w-12
+                       flex
+                       hover:bg-[var(--federal-blue)]
+                       items-center justify-center
+                       rounded-full
+                       transition-all duration-300"
       >
         <i
-          class="fa-brands fa-whatsapp group-hover:text-[var(--ghost-white)] text-[var(--federal-blue)] fa-lg"
+          class="fa-brands fa-whatsapp
+                        group-hover:text-white
+                        text-[var(--federal-blue)]
+                        text-base sm:text-lg"
         ></i>
       </a>
     </div>
   </div>
-
-  <div></div>
 </footer>
